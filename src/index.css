@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+}
+
+@layer components {
+  /* Custom focus styles */
+  *:focus {
+    @apply outline-none ring-2 ring-teal-500 ring-opacity-50;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+
+  /* Form elements */
+  input, textarea, select {
+    @apply transition-all duration-200;
+  }
+
+  input:hover, textarea:hover, select:hover {
+    @apply border-gray-400;
+  }
+
+  /* Phone Input Styles */
+  .PhoneInput {
+    @apply flex items-center;
+  }
+
+  .PhoneInputCountry {
+    @apply flex items-center gap-2 ml-2;
+  }
+
+  .PhoneInputCountrySelect {
+    @apply opacity-0 absolute;
+  }
+
+  .PhoneInputCountryIcon {
+    @apply w-6 h-4 overflow-hidden rounded;
+  }
+
+  .PhoneInputInput {
+    @apply w-full px-3 py-2 border-0 focus:ring-0;
+  }
+
+  /* Button hover effects */
+  button {
+    @apply transition-all duration-200;
+  }
+
+  button:active {
+    @apply transform scale-95;
+  }
+
+  /* Card hover effects */
+  .hover-card {
+    @apply transition-all duration-200 hover:transform hover:-translate-y-1 hover:shadow-lg;
+  }
+}
