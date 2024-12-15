@@ -30,7 +30,7 @@ export const Home: React.FC = () => {
           <Button
             size="lg"
             onClick={() => navigate('/new-complaint')}
-            className="flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all w-full sm:w-auto bg-[#C62F3C] text-white hover:bg-[#A22731]"
+            className="flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all w-full sm:w-auto bg-[#2B3E89] text-white hover:bg-[#212C6C]"
           >
             <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             <span>{t.home.newComplaint}</span>
@@ -39,7 +39,7 @@ export const Home: React.FC = () => {
             variant="secondary"
             size="lg"
             onClick={() => navigate('/track-complaint')}
-            className="flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all w-full sm:w-auto bg-[#2B3E89] text-white hover:bg-[#212C6C]"
+            className="flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all w-full sm:w-auto bg-[#C62F3C] text-white hover:bg-[#A22731]"
           >
             <Search className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
             <span>{t.home.trackComplaint}</span>
