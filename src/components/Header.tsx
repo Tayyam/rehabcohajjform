@@ -12,15 +12,16 @@ export const Header: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const NavLink = ({ to, icon: Icon, text, activeColor }: { to: string; icon: React.ElementType; text: string; activeColor: string }) => (
-    <Link
+  const NavLink = ({ to, icon: Icon, text }: { to: string; icon: React.ElementType; text: string }) => (
+    <Link 
       to={to}
       className={`
         flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium
         transition-all duration-200 text-base w-full
         ${isActive(to)
-          ? `bg-[${activeColor}-50] text-[${activeColor}-700]`
-          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'}
+          ? 'bg-teal-50 text-teal-700'
+          : 'text-gray-600 hover:bg-gray-50 hover:text-teal-600'
+        }
       `}
       onClick={() => setIsMenuOpen(false)}
     >
@@ -49,36 +50,16 @@ export const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
-            <NavLink
-              to="/new-complaint"
-              icon={FileText}
-              text={t.header.newComplaint}
-              activeColor="#2B3E89" // الأزرق للبلاغ
-            />
-            <NavLink
-              to="/track-complaint"
-              icon={Search}
-              text={t.header.trackComplaint}
-              activeColor="#C62F3C" // الأحمر لمتابعة البلاغ
-            />
+            <NavLink to="/new-complaint" icon={FileText} text={t.header.newComplaint} />
+            <NavLink to="/track-complaint" icon={Search} text={t.header.trackComplaint} />
           </nav>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden border-t py-4 space-y-2">
-            <NavLink
-              to="/new-complaint"
-              icon={FileText}
-              text={t.header.newComplaint}
-              activeColor="#2B3E89" // الأزرق للبلاغ
-            />
-            <NavLink
-              to="/track-complaint"
-              icon={Search}
-              text={t.header.trackComplaint}
-              activeColor="#C62F3C" // الأحمر لمتابعة البلاغ
-            />
+            <NavLink to="/new-complaint" icon={FileText} text={t.header.newComplaint} />
+            <NavLink to="/track-complaint" icon={Search} text={t.header.trackComplaint} />
           </div>
         )}
       </div>
